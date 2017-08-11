@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Treemap</title>
+         <h1> Beyond the Uniform Data Visualization</h1>
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="d3-tip.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="treemapStyleSheet.css">
+        <link rel="stylesheet" type="text/css" href="bar_style.css">
+        
+        <style>
+            header {
+              padding: 1em;
+              color: white;
+              background-color: black;
+              clear: left;
+             text-align: center;
+            }
+            
+            
+            
+        </style>
+
+
+    </head>
+
+    <form>
+      <label><input type="radio" name="sourceMode" value="Civilians" id="CiviliansBtn"  onchange="changeToCivilians()" onclick="makeCivBar()">Civilians</label>
+      <label><input type="radio" name="sourceMode" value="Consultants" id="ConsultantsBtn" checked onchange="changeToConsultants()" onclick="makeConBar()">Consultants</label>
+    </form>
+
+    <form>
+     <!-- <label><input type="radio" name="mode" value="US Navy" id="USNavyBtn" checked onchange="loadUSNavy()">US Navy</label> 
+      <label><input type="radio" name="mode" value="US Air Force" id="USAFBtn" onchange="loadUSAirForce()">US Air Force</label>
+      <label><input type="radio" name="mode" value="US Army" id="USArmyBtn" onchange="loadUSArmy()">US Army</label>
+      <label><input type="radio" name="mode" value="US Coast Guard" id="USCGBtn" onchange="loadUSCoastGuard()">US Coast Guard</label>
+-->
+      
+
+      <!-- getting rid of USMC -->
+      <!-- <label><input type="radio" name="mode" value="US Marine Corps" id="USMCBtn" onchange="loadUSMarineCorps()">US Marine Corps</label> -->
+    </form>
+
+    <form><br></form>
+
+    <form>
+      <label><input type="radio" name="displayByCivilians" value="Industry" id="civIndustryBtn" checked onchange="changeDisplayCategory()" onclick="makeCivBar()">Civilians: Industry</label>
+      <label><input type="radio" name="displayByCivilians" value="Function" id="civFunctionBtn" onchange="changeDisplayCategory()" onclick="makeCivBar()">Civilians: Function</label>
+      <label><input type="radio" name="displayByCivilians" value="SizeCompany" id="civSizeCompanyBtn"  onchange="changeDisplayCategory()" onclick="makeCivBar()">Civilians: Size of Company</label>
+    </form>
+
+    <form>
+      <label><input type="radio" name="displayByConsultants" value="Industry" id="consIndustryBtn" checked onchange="changeDisplayCategory()" onclick="makeConBar()">Consultants: Industry</label>
+      <label><input type="radio" name="displayByConsultants" value="Employer" id="consEmplyerBtn" onchange="changeDisplayCategory()" onclick="makeConBar()">Consultants: Employer</label>
+    </form>
+
+    <form>
+     
+    </form>
+
+
+    <body style="background-color:#E0E0E0;">
+      <script type="text/javascript" src="makeTreeMap_Consultants.js"></script>
+      <script type="text/javascript" src="makeTreeMap_Civilians.js"></script>
+    	<script type="text/javascript" src="dataLoading.js"></script>
+      <script type="text/javascript" src="main_bar.js"></script>
+
+    
+      
+
+      
+
+      <table >
+        
+         <tr><td><svg id="svg_bar" onload="makeCivBar()" style="float:center;"></svg></td></tr>
+        
+         
+
+      </table>
+      <table  ><tr><td>  <h3 id="treeMap_title" style="float:center;" >Navy </h3></td></tr></table>
+
+      <table ><tr><td><svg id="the_treeMap" onload="loadUSNavy()"></svg></td></tr></table>
+
+
+
+
+    </body>
+   
+</html>

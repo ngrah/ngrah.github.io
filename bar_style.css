@@ -1,0 +1,26 @@
+
+svg {
+          font: 14 px sans-serif;
+        }
+        svg .myrect_tree:hover {
+            /*fill: red;*/
+        }
+        svg .text {
+            fill: black;
+        }
+        svg .myrect_bar {
+            fill: steelblue;
+            stroke-width: 0px;
+        }
+        svg .myrect:hover {
+           /* fill: red; */
+        }
+
+        svg .svg_bar{
+          float: left;
+          width: 30%;
+        }
+        svg .the_treeMap{
+          /*float: left;*/
+          width: 50%
+        }
